@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.kunsan.library.DownLoadButton
+        android:id="@+id/btn_download1"
+        android:layout_width="90dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="10dp"
+        app:border_width="2dp"
+        app:border_color="@color/colorAccent"
+        app:loading_progress_color="@color/colorAccent"
+        app:percent_show="false"
+        app:border_radius="16dp"
+        app:install_color="@color/green"
+        app:progress_textSize="18sp"
+        app:text_color="@color/colorAccent"
+        />
+
+    <com.kunsan.library.DownLoadButton
+        android:id="@+id/btn_download2"
+        android:layout_width="160dp"
+        android:layout_height="46dp"
+        app:border_width="2dp"
+        android:layout_marginTop="10dp"
+        app:border_color="@color/colorPrimary"
+        app:loading_progress_color="@color/colorPrimary"
+        app:percent_show="false"
+        app:install_color="@color/green"
+        app:progress_textSize="18sp"
+        app:text_color="@color/colorPrimary"
+        />
+
+    <com.kunsan.library.DownLoadButton
+        android:id="@+id/btn_download3"
+        android:layout_width="190dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="10dp"
+        app:border_width="2dp"
+        app:border_color="@color/yellow"
+        app:install_color="@color/green"
+        app:loading_progress_color="@color/yellow"
+        app:border_radius="16dp"
+        app:progress_textSize="18sp"
+        app:border_show = "false"
+        app:text_color="@color/yellow"
+        />
+
+    <com.kunsan.library.DownLoadButton
+        android:id="@+id/btn_download4"
+        android:layout_width="240dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="10dp"
+        app:border_width="2dp"
+        app:border_color="@color/green"
+        app:loading_progress_color="@color/green"
+        app:percent_show="false"
+        app:install_color="@color/green"
+        app:border_radius="16dp"
+        app:progress_textSize="18sp"
+        app:text_color="@color/green"
+        />
+</LinearLayout>
