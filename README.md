@@ -9,13 +9,13 @@ allprojects {
 			...
 			maven { url 'https://jitpack.io' }
 		}
-	}
- ```
- ```Groovy
+	    }
+```
+```Groovy
  	dependencies {
 	        implementation 'com.github.Kunsan16:DownloadButton:V1.0.0'
 	}
-  ```
+```
 ### 2.使用
 #### xml
  ```xml
