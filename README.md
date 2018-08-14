@@ -1,4 +1,5 @@
 # DownloadButton
+[![](https://jitpack.io/v/Kunsan16/DownloadButton.svg)](https://jitpack.io/#Kunsan16/DownloadButton)
 ### 一款支持多种样式的下载按钮，效果图如下
 
 ![image](https://github.com/Kunsan16/DownloadButton/blob/master/download.gif)
