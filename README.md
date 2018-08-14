@@ -1,10 +1,10 @@
 # DownloadButton
 一款支持多种样式的下载按钮，效果图如下
 ![image](https://github.com/Kunsan16/DownloadButton/blob/master/download.gif)
-###1.安装
+### 1.安装
 
-###2.使用
-####xml
+### 2.使用
+#### xml
  ```xml
       <com.kunsan.library.DownLoadButton
         android:id="@+id/btn_download2"
@@ -20,7 +20,7 @@
         app:text_color="@color/colorPrimary"
         />
 ```
-####kotlin
+#### kotlin
 ##### 注册下载按钮的监听，在相应的回调方法里做处理，以下为rxjava模拟下载过程（代码没贴全，详细移步[MainActivity ](https://github.com/Kunsan16/DownloadButton/blob/master/app/src/main/java/com/kunsan/downloadbutton/MainActivity.kt)）:
 ```kotlin
  private val map = ConcurrentHashMap<DownLoadButton, Disposable>(4)
@@ -72,7 +72,7 @@
 
     }
 ```
-
+### API
  方法名 | 备注
 | --- | ---
 | border_width | 按钮边框粗细
