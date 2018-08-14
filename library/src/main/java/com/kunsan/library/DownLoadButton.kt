@@ -196,12 +196,11 @@ class DownLoadButton: ProgressBar, View.OnClickListener {
         drawRoundRectPath(canvas)
         mPaint.color = mProgressColor
 
-        drawProgressPath(progress)  //绘制src层的path
+        drawProgressPath(progress)              //绘制src层的path
         mPaint.xfermode = mPorterDuffMode
         canvas.drawPath(mProgressPath,mPaint)   //绘制与dst层的重叠区域，也就是progress
         canvas.restoreToCount(layer)
         mPaint.xfermode = null
-
 
     }
 
