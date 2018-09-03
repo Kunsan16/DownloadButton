@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         btn_download.setStateChangeListener(object : DownLoadButton.StateChangeListener {
             override fun onTaskPause() {
 
-                map[btn_download]!!.dispose()    //取出对应的dispose，暂停事件流
+                map[btn_download]?.dispose()    //取出对应的dispose，暂停事件流
                 btn_download.setState(DownLoadButton.STATE_PROGRESS_PAUSE)
             }
 
@@ -112,6 +112,6 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
 
-        dispose!!.dispose()
+        dispose?.dispose()
     }
 }

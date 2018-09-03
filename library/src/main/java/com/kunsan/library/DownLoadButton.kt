@@ -119,19 +119,19 @@ class DownLoadButton: ProgressBar, View.OnClickListener {
         if (progress == 0 && mCurrentState == STATE_PROGRESS_DEFAULT) {
             //默认状态到开始下载
             mCurrentState = STATE_PROGRESS_DOWNLOADING
-            mStateChangeListener!!.onTaskLoading()
+            mStateChangeListener?.onTaskLoading()
         }else if (progress in 0..max && mCurrentState == STATE_PROGRESS_DOWNLOADING){
             //暂停
             mCurrentState = STATE_PROGRESS_PAUSE
-            mStateChangeListener!!.onTaskPause()
+            mStateChangeListener?.onTaskPause()
         }else if (progress in 0..max && mCurrentState == STATE_PROGRESS_PAUSE){
             //继续下载
             mCurrentState = STATE_PROGRESS_DOWNLOADING
-            mStateChangeListener!!.onTaskLoading()
+            mStateChangeListener?.onTaskLoading()
         }else if (progress == max && mCurrentState == STATE_PROGRESS_FINISH){
             //下载完成
             mCurrentState = STATE_PROGRESS_FINISH
-            mStateChangeListener!!.onTaskFinish()
+            mStateChangeListener?.onTaskFinish()
         }
     }
 
@@ -139,7 +139,7 @@ class DownLoadButton: ProgressBar, View.OnClickListener {
     /**
      * 按钮默认状态
      */
-    private fun drawDefaultProgress(canvas: Canvas?) {
+    private fun drawDefaultProgress(canvas: Canvas) {
         drawRectFBackground(canvas,mBorderColor)
         drawProgressText(canvas,"下载")
     }
@@ -186,12 +186,12 @@ class DownLoadButton: ProgressBar, View.OnClickListener {
     /**
      * PorterDuffXfermode绘制进度条
      */
-    private fun drawProgress(canvas: Canvas?, mProgressColor:Int) {
+    private fun drawProgress(canvas: Canvas, mProgressColor:Int) {
 
         mPaint.style = Paint.Style.FILL
 
         val progress = mValidWidth * (progress * 1.0f / max)
-        val layer = canvas!!.saveLayer(0f,0f,progress,height.toFloat(),mPaint)
+        val layer = canvas.saveLayer(0f,0f,progress,height.toFloat(),mPaint)
 
         drawRoundRectPath(canvas)
         mPaint.color = mProgressColor
@@ -230,7 +230,7 @@ class DownLoadButton: ProgressBar, View.OnClickListener {
     /**
      * 绘制按钮
      */
-    private fun drawRectFBackground(canvas: Canvas?, color:Int){
+    private fun drawRectFBackground(canvas: Canvas, color:Int){
 
         if (showBorder) {
             mPaint.style = Paint.Style.STROKE
@@ -241,20 +241,20 @@ class DownLoadButton: ProgressBar, View.OnClickListener {
         mPaint.strokeWidth = mBorderWidth
         mPaint.color = color
         val rect = RectF(mBorderWidth,mBorderWidth,mValidWidth.toFloat()-mBorderWidth,mValidHeight.toFloat()-mBorderWidth)
-        canvas!!.drawRoundRect(rect,mBorderRadius,mBorderRadius,mPaint)
+        canvas.drawRoundRect(rect,mBorderRadius,mBorderRadius,mPaint)
     }
 
     /**
      * 绘制进度文本
      */
-    private fun drawProgressText(canvas: Canvas?, text:String) {
+    private fun drawProgressText(canvas: Canvas, text:String) {
 
         textPaint.color = if (showBorder) mTextColor else Color.WHITE
 
         val progressText = if (showPercent && TextUtils.isEmpty(text)) getPercent() else text
         val textWidth = textPaint.measureText(progressText)
         val textHeight = textPaint.descent() + textPaint.ascent()
-        canvas!!.drawText(progressText,mValidWidth / 2 - textWidth / 2,mValidHeight / 2 - textHeight / 2,textPaint)
+        canvas.drawText(progressText,mValidWidth / 2 - textWidth / 2,mValidHeight / 2 - textHeight / 2,textPaint)
 
 
     }
