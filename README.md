@@ -14,7 +14,7 @@ allprojects {
 ```
 ```Groovy
  	dependencies {
-	        implementation 'com.github.Kunsan16:DownloadButton:V1.0.0'
+	        implementation 'com.github.Kunsan16:DownloadButton:1.0.1'
 	}
 ```
 ### 2.使用
@@ -43,7 +43,7 @@ allprojects {
         btn_download.setStateChangeListener(object : DownLoadButton.StateChangeListener {
             override fun onTaskPause() {
 
-                map[btn_download]!!.dispose()    //取出对应的dispose，暂停事件流
+                map[btn_download]?.dispose()    //取出对应的dispose，暂停事件流
                 btn_download.setState(DownLoadButton.STATE_PROGRESS_PAUSE)
             }
 
