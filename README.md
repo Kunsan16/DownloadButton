@@ -1,9 +1,22 @@
 # DownloadButton
+[![](https://jitpack.io/v/Kunsan16/DownloadButton.svg)](https://jitpack.io/#Kunsan16/DownloadButton)
 ### 一款支持多种样式的下载按钮，效果图如下
 
 ![image](https://github.com/Kunsan16/DownloadButton/blob/master/download.gif)
 ### 1.安装
-
+```Groovy
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	    }
+```
+```Groovy
+ 	dependencies {
+	        implementation 'com.github.Kunsan16:DownloadButton:V1.0.0'
+	}
+```
 ### 2.使用
 #### xml
  ```xml
